@@ -64,6 +64,36 @@ module.exports = (sequelize, Sequelize) => {
             references: engine_type,
             referencesKey: 'id',
             field: 'id_engine_type'
+        },
+        picture_link: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            field: 'picture_link'
+        },
+        price: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            field: 'price'
+        },
+        years: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            field: 'years'
+        },
+        descript: {
+            type: Sequelize.STRING,
+            allowNull: true,
+            field: 'descript'
+        },
+        id_fuel_index: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            field: 'id_fuel_index'
+        },
+        hp: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            field: 'hp'
         }
     },{
         modelName: 'car',

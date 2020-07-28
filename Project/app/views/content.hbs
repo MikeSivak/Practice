@@ -2,7 +2,7 @@
     {{#each content}}
     <div class="product-item">
         <img class="mini-pic"
-            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*"
+            src="{{this.picture_link}}"
             alt="Card image cap">
         <a id="link-item" href="/content/{{this.id}}">
             <label class="brand_label">{{'car_model.car_brand.brand_name'}}</label>

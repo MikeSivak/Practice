@@ -190,12 +190,44 @@ foreign key (id_cylinders) references car_cylinders(id),
 foreign key (id_engine_type) references engine_type(id);
 
 alter table car add foreign key (id_engine_volume) references engine_volume(id);
+alter table car add id_fuel_index int not null;
+alter table car add hp int not null;
+alter table car add foreign key (id_fuel_index) references fuel_index(id);
 
 insert into car
 values 
-(3,2,8,3,4,1,16),
-(3,2,8,3,5,1,17);
+(3,2,8,
+3,4,1,16,
+'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*',
+120000, 2020, 'very good car!', 5, 450),
+(3,2,8,3,5,1,17,
+'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-rs6-3.5-star-car.jpg?itok=RKnoV2Zw',
+100000, 2017, 'very power and fast car!', 5, 560)
+select * from car
+alter table car add 
+picture_link nvarchar(max) not null,
+price int not null,
+years int not null,
+descript nvarchar(max);
 
+create table fuel_index
+(
+	id int identity(1,1) primary key,
+	index_name nvarchar(20)
+);
+
+insert into fuel_index
+values
+('¿»-76'),
+('¿»-80'),
+('¿»-92'),
+('¿»-95'),
+('¿»-98'),
+('ƒ“');
+
+select * from car;
+
+select *from car_brand;
 select brand_name,model_name,body_name,fuel_name,drive_name,engine_type_name,volume,
 cylinders_count, cylinders_marking from car
 join car_model on car_model.id = car.id_model
@@ -301,3 +333,8 @@ create table orders_history
 
 alter table orders_history add foreign key (id_car) references car(id),
 foreign key (id_user) references users(id);
+
+
+-----------------------------------------
+-------The fouth part - improving--------
+-----------------------------------------

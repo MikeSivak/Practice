@@ -4,121 +4,124 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<div id="product-card" class="card">
-    <div class="row">
-        <aside class="col-sm-5 border-right">
-            <article class="gallery-wrap">
-                <div class="img-big-wrap">
-                    <div> <a href="#"><img
-                                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*"></a>
-                    </div>
-                </div> <!-- slider-product.// -->
-                <div class="img-small-wrap">
-                    <div class="item-gallery"> <img
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*">
-                    </div>
-                    <div class="item-gallery"> <img
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*">
-                    </div>
-                    <div class="item-gallery"> <img
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*">
-                    </div>
-                    <div class="item-gallery"> <img
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*">
-                    </div>
-                </div> <!-- slider-nav.// -->
-            </article> <!-- gallery-wrap .end// -->
-        </aside>
-        <aside class="col-sm-7">
-            <article class="card-body p-5">
-                <h3 class="title mb-3">Original Version of Some product name</h3>
+<main role="main">
+    {{#each product}}
+    <div id="product-card" class="card">
+        <hr style="height: 1px; background-color:rgb(161, 161, 161); color:rgb(161, 161, 161); border:none;">
+        <div class="row">
+            <aside class="col-sm-7 border-right">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap">
+                        <div> <a href="#"><img id="big-picture" src="{{this.picture_link}}"></a>
+                        </div>
+                    </div> <!-- slider-product.// -->
+                </article> <!-- gallery-wrap .end// -->
+            </aside>
 
-                <p class="price-detail-wrap">
-                    <span class="price h3 text-warning">
-                        <span class="currency">US $</span><span class="num">1299</span>
-                    </span>
-                    <span>/per kg</span>
-                </p> <!-- price-detail-wrap .// -->
+            <aside class="col-sm-5 border-left">
+                <article class="card-body p-5">
+                    <h3 class="title mb-3">{{'car_model.car_brand.brand_name'}} {{'car_model.model_name'}}</h3>
+                    <br>
+                    <dl class="item-property">
+                        <dt class="descript">Марка</dt>
+                        <dd class="descript">
+                            {{'car_model.car_brand.brand_name'}}
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt class="descript">Модель</dt>
+                        <dd class="descript">{{'car_model.model_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+                    <dl class="param param-feature">
+                        <dt class="descript">Год выпуска</dt>
+                        <dd class="descript">{{this.years}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+                    <dl class="param param-feature">
+                        <dt class="descript">Страна производитель</dt>
+                        <dd class="descript">{{'car_model.car_brand.car_country.country_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+                    <a href="#" class="btn btn-lg btn-primary text-uppercase"> Купить </a>
+                </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+
+        </div> <!-- row.// -->
+        <hr style="height: 1px; background-color:rgb(161, 161, 161); color:rgb(161, 161, 161); border:none;">
+        <div id="prod-descript" class="row">
+            <div class="col-md-3">
                 <dl class="item-property">
-                    <dt>Description</dt>
-                    <dd>
-                        <p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco </p>
+                    <dt class="descript">Тип двигателя</dt>
+                    <dd class="descript">
+                        {{'engine_type.engine_type_name'}}
                     </dd>
                 </dl>
-                <dl class="param param-feature">
-                    <dt>Model#</dt>
-                    <dd>12345611</dd>
-                </dl> <!-- item-property-hor .// -->
-                <dl class="param param-feature">
-                    <dt>Color</dt>
-                    <dd>Black and white</dd>
-                </dl> <!-- item-property-hor .// -->
-                <dl class="param param-feature">
-                    <dt>Delivery</dt>
-                    <dd>Russia, USA, and Europe</dd>
-                </dl> <!-- item-property-hor .// -->
 
-                <hr>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <dl class="param param-inline">
-                            <dt>Quantity: </dt>
-                            <dd>
-                                <select class="form-control form-control-sm" style="width:70px;">
-                                    <option> 1 </option>
-                                    <option> 2 </option>
-                                    <option> 3 </option>
-                                </select>
-                            </dd>
-                        </dl> <!-- item-property .// -->
-                    </div> <!-- col.// -->
-                    <div class="col-sm-7">
-                        <dl class="param param-inline">
-                            <dt>Size: </dt>
-                            <dd>
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <span class="form-check-label">SM</span>
-                                </label>
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <span class="form-check-label">MD</span>
-                                </label>
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <span class="form-check-label">XXL</span>
-                                </label>
-                            </dd>
-                        </dl> <!-- item-property .// -->
-                    </div> <!-- col.// -->
-                </div> <!-- row.// -->
-                <hr>
-                <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i>
-                    Add to cart </a>
-            </article> <!-- card-body.// -->
-        </aside> <!-- col.// -->
-    </div> <!-- row.// -->
-</div> <!-- card.// -->
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Кузов</dt>
+                        <dd class="descript">{{'car_body.body_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Тип топлива</dt>
+                        <dd class="descript">{{'car_fuel.fuel_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Привод</dt>
+                        <dd class="descript">{{'car_drive.drive_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+        </div>
+        <div id="prod-descript" class="row">
+            <div class="col-md-3">
+                <dl class="item-property">
+                    <dt class="descript">Двигатель</dt>
+                    <dd class="descript">
+                        {{'car_cylinder.cylinders_marking'}}{{'car_cylinder.cylinders_count'}}
+                    </dd>
+                </dl>
 
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Объём двигателя</dt>
+                        <dd class="descript">{{'engine_volume.volume'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Мощность</dt>
+                        <dd class="descript">{{this.hp}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Топливо</dt>
+                        <dd class="descript">{{'fuel_index.index_name'}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+        </div>
+
+        <div id="prod-descript" class="row">
+            <div class="col-md-3">
+                <dl class="param param-feature">
+                        <dt class="descript">Описание</dt>
+                        <dd class="descript">{{this.descript}}</dd>
+                    </dl> <!-- item-property-hor .// -->
+            </div>
+        </div>
+
+    </div> <!-- card.// -->
+
+
+    </div>
+    {{/each}}
+</main>
+
+
+<div class="down-div">
 
 </div>
-<!--container.//-->
-
-
-{{!-- <br><br><br>
-<article class="bg-secondary mb-3">
-    <div class="card-body text-center">
-        <h4 class="text-white">HTML UI KIT <br> Ready to use Bootstrap 4 components and templates </h4>
-        <p class="h5 text-white"> for Ecommerce, marketplace, booking websites
-            and product landing pages</p> <br>
-        <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
-                <i class="fa fa-window-restore "></i></a></p>
-    </div>
-    <br><br><br>
-</article> --}}

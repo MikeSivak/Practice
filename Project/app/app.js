@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 
 const content_router = require('./routes/content.route.js');
-
+const admin_router = require('./routes/admin.route.js');
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,6 +41,8 @@ app.get('/', (req,res)=>{
     res.render('home');
 });
 
+
+app.use('/admin', admin_router);
 app.use('/content', content_router);
 
 app.listen(port);

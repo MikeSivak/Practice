@@ -26,5 +26,6 @@ db.orders_history = require('./orders_history.model.js')(sequelize, Sequelize);
 db.car = require('./car.model.js')(sequelize, Sequelize);
 db.roles = require('./roles.model.js')(sequelize, Sequelize);
 db.users = require('./users.model.js')(sequelize, Sequelize);
+db.fuel_index = require('./fuel_index.model.js')(sequelize, Sequelize);
 
 module.exports = db;
