@@ -10,13 +10,13 @@ const db = require('../models');
 //         })
 // }
 
-const countries = db.car_country;
+// const countries = db.car_country;
 
-exports.getGods = async (req, res) =>{
-    await countries
-        .findAll({
-            raw:true    
-        }).then(content=>{
-            console.log('CONTENT ==== ' + content);
-        })
-}
+// exports.getGods = async (req, res) =>{
+//     await countries
+//         .findAll({
+//             raw:true    
+//         }).then(content=>{
+//             console.log('CONTENT ==== ' + content);
+//         })
+// }

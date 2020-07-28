@@ -22,6 +22,6 @@ module.exports = (sequelize, Sequelize) => {
         tableName: 'car_cylinders',
         timestamps: false
     });
-    
+
     return car_cylinders;
 }

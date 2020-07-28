@@ -1,3 +1,83 @@
 #s{
     color: rgb(78, 177, 184);
 }
+
+#start_but{
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 24px;
+}
+
+html{
+    background-color: #373a3c;
+}
+
+.back-div{
+    margin-top: 80px;
+    padding: 5px;
+}
+
+.product-item{
+    background-color: gainsboro;
+    height: 120px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2px;
+    padding: 5px 5px;
+}
+
+.product-item:hover{
+    background-color: rgb(219, 216, 216);
+}
+
+.mini-pic{
+    height: 110px;
+    width: 190px;
+}
+
+.brand_label{
+    margin-left: 20px;
+}
+
+#link-item{
+    color: rgb(43, 103, 138);
+}
+
+.down-div{
+    height: 10px;
+}
+
+.gallery-wrap .img-big-wrap img {
+    height: 450px;
+    width: auto;
+    display: inline-block;
+    cursor: zoom-in;
+}
+
+
+.gallery-wrap .img-small-wrap .item-gallery {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    margin: 7px 2px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gallery-wrap .img-small-wrap {
+    text-align: center;
+}
+.gallery-wrap .img-small-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: zoom-in;
+}
+
+#product-card{
+    margin-top: 80px;
+    padding: 10px 10px;
+}

@@ -58,7 +58,7 @@ values
 ('хэтчбек'),
 ('джип'),
 ('купе');
-
+select * from car_body;
 
 create table car_fuel
 (
@@ -179,6 +179,8 @@ values
 
 select * from engine_volume;
 
+select * from engine_type;
+
 alter table car
 add foreign key (id_model) references car_model(id),
 foreign key (id_body) references car_body(id),
@@ -191,7 +193,54 @@ alter table car add foreign key (id_engine_volume) references engine_volume(id);
 
 insert into car
 values 
-(,,,,,,),
+(3,2,8,3,4,1,16),
+(3,2,8,3,5,1,17);
+
+select brand_name,model_name,body_name,fuel_name,drive_name,engine_type_name,volume,
+cylinders_count, cylinders_marking from car
+join car_model on car_model.id = car.id_model
+join car_brand on car_model.id_brand = car_brand.id
+join car_body on car_body.id = car.id_body
+join car_fuel on car_fuel.id = car.id_fuel
+join car_drive on car_drive.id = car.id_drive
+join car_cylinders on car_cylinders.id = car.id_cylinders
+join engine_type on engine_type.id = car.id_engine_type
+join engine_volume on engine_volume.id = car.id_engine_volume;
+
+select * from car_fuel;
+
+insert into car_brand
+values
+(1,'Audi'),
+(1,'Volkswagen'),
+(2,'Mazda'),
+(2,'Toyota'),
+(4,'Aston Martin'),
+(3,'Volvo');
+
+select * from car_brand
+join car_country
+on car_brand.id_country = car_country.id;
+
+
+insert into car_model
+values
+(1,'A8'),
+(1,'S8'),
+(1,'RS6 C7'),
+(2,'Phaeton'),
+(2,'Golf 2'),
+(3,'626'),
+(3,'RX-8'),
+(4,'Camry 2017'),
+(4,'Land Cruiser 100'),
+(5,'DB-9'),
+(6,'S80'),
+(6,'S60');
+select * from car_model;
+select * from car_brand
+join car_model
+on car_model.id_brand = car_brand.id;
 
 -----------------------------------------
 -------------The second part-------------
