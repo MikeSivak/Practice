@@ -94,6 +94,11 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false,
             field: 'hp'
+        },
+        quantity: {
+            type:Sequelize.INTEGER,
+            allowNull: false,
+            field: 'quantity'
         }
     },{
         modelName: 'car',

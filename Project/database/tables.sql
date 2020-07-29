@@ -198,7 +198,7 @@ insert into car
 values 
 (3,2,8,
 3,4,1,16,
-'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-audi-s8-rear-motion-1561988432.jpg?crop=0.655xw:0.599xh;0.345xw,0.347xh&resize=480:*',
+'https://s.auto.drom.ru/i24202/c/photos/generations/500x_audi_rs6_g2080.jpg?635937',
 120000, 2020, 'very good car!', 5, 450),
 (3,2,8,3,5,1,17,
 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-rs6-3.5-star-car.jpg?itok=RKnoV2Zw',
