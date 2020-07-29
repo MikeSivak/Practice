@@ -193,22 +193,25 @@ alter table car add foreign key (id_engine_volume) references engine_volume(id);
 alter table car add id_fuel_index int not null;
 alter table car add hp int not null;
 alter table car add foreign key (id_fuel_index) references fuel_index(id);
+alter table car add quantity int not null;
 
 insert into car
 values 
 (3,2,8,
 3,4,1,16,
 'https://s.auto.drom.ru/i24202/c/photos/generations/500x_audi_rs6_g2080.jpg?635937',
-120000, 2020, 'very good car!', 5, 450),
+120000, 2020, 'very good car!', 5, 450, 5),
 (3,2,8,3,5,1,17,
 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-rs6-3.5-star-car.jpg?itok=RKnoV2Zw',
-100000, 2017, 'very power and fast car!', 5, 560)
+100000, 2017, 'very power and fast car!', 5, 560, 8);
 select * from car
 alter table car add 
 picture_link nvarchar(max) not null,
 price int not null,
 years int not null,
 descript nvarchar(max);
+
+select * from car_cylinders;
 
 create table fuel_index
 (

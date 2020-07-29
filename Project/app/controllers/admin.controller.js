@@ -92,25 +92,54 @@ car.belongsTo(fuel_index, {
 });
 
 exports.getCars = async (req, res) => {
+
+    const brands = await car_brand
+        .findAll({ raw: true });
+    const models = await car_model
+        .findAll({ raw: true });
+    const bodies = await car_body
+        .findAll({ raw: true });
+    const fuels = await car_fuel
+        .findAll({raw:true});
+    const drives= await car_drive
+        .findAll({raw:true});
+    const cylinders = await car_cylinders
+        .findAll({raw:true});
+    const engine_types = await engime_type
+        .findAll({raw:true});
+    const engine_volumes = await engine_volume
+        .findAll({raw:true});   
+    const fuel_indices = await fuel_index
+        .findAll({raw:true});
+
     try {
         await car
             .findAll({
                 include: [
                     { model: car_cylinders },
-                    { model: car_model, include: car_brand},
-                    { model: car_model, include:[{model: car_brand, include: car_country}]},
+                    { model: car_model, include: car_brand },
+                    { model: car_model, include: [{ model: car_brand, include: car_country }] },
                     { model: car_body },
                     { model: car_fuel },
                     { model: car_drive },
                     { model: engime_type },
                     { model: engine_volume },
-                    { model: fuel_index}
+                    { model: fuel_index }
                 ],
                 raw: true
             }
             ).then(cars => {
                 res.render('admin', {
                     cars: cars,
+                    brands: brands,
+                    models: models,
+                    bodies: bodies,
+                    fuels: fuels,
+                    drives: drives,
+                    cylinders: cylinders,
+                    engine_types: engine_types,
+                    engine_volumes: engine_volumes,
+                    fuel_indices: fuel_indices
                 });
                 console.log(cars);
             })

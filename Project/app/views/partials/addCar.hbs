@@ -4,42 +4,66 @@
       <br>
       <select id="sBrand"class="form-control" title="Select Brand">
         <option disabled selected>Brand</option>
+        {{#each brands}}
+          <option>{{this.brand_name}}</option>
+        {{/each}}
       </select>
     </div>
     <br>
     <div class="form-group col-md-6">
       <select id="sModel" class="form-control" title="Select Model">
         <option disabled selected>Model</option>
+        {{#each models}}
+        <option>{{this.model_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sBody" class="form-control" title="Select Body">
         <option disabled selected>Body</option>
+        {{#each bodies}}
+        <option>{{this.body_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sFuel" class="form-control" title="Select Fuel">
         <option disabled selected>Fuel</option>
+        {{#each fuels}}
+        <option>{{this.fuel_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sDrive" class="form-control" title="Select Drive">
         <option disabled selected>Drive</option>
+        {{#each drives}}
+        <option>{{this.drive_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sCylinders" class="form-control" title="Select Cylinders">
         <option disabled selected>Cylinders</option>
+        {{#each cylinders}}
+        <option>{{this.cylinders_count}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sEngineType" class="form-control" title="Select Engine Type">
         <option disabled selected>Engine Type</option>
+        {{#each engine_types}}
+        <option>{{this.engine_type_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
       <select id="sEngineVolume" class="form-control" title="Select Engine Volume">
         <option disabled selected>Engine Volume</option>
+        {{#each engine_volumes}}
+        <option>{{this.volume}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
@@ -62,6 +86,9 @@
     <div class="form-group col-md-6">
       <select id="sFuelIndex" class="form-control" title="Select Fuel Index">
         <option disabled selected>Fuel Index</option>
+        {{#each fuel_indices}}
+        <option>{{this.index_name}}</option>
+        {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
