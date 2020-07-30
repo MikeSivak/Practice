@@ -150,8 +150,9 @@ exports.getProduct = async (req, res) => {
 }
 
 exports.buyProduct = async (req, res) => {
+
     try {
-        //add request to db in the orders & orders_history tables
+        
     }
     catch (e) {
         res.status(500).json({

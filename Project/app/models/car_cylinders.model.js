@@ -7,11 +7,6 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             field: 'id'
         },
-        cylinders_count: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            field: 'cylinders_count'
-        },
         cylinders_marking: {
             type: Sequelize.STRING,
             allowNull: false,

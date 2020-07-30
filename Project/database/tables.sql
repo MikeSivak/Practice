@@ -110,6 +110,15 @@ values
 (12, 'W'),
 (12, 'V'),
 (16, 'W');
+select * from car_cylinders;
+update car_cylinders set cylinders_marking = '4 цилиндра (рядный)' where cylinders_marking = 'рядный' and id=1;
+update car_cylinders set cylinders_marking = '5 цилиндров (рядный)' where id=2;
+update car_cylinders set cylinders_marking = 'W16' where id=8;
+insert into car_cylinders
+values ('6 цилиндров (рядный)');
+
+alter table car_cylinders drop column cylinders_count;
+delete from car_cylinders;
 
 select * from car_cylinders;
 
@@ -199,12 +208,13 @@ insert into car
 values 
 (3,2,8,
 3,4,1,16,
-'https://s.auto.drom.ru/i24202/c/photos/generations/500x_audi_rs6_g2080.jpg?635937',
+'500x_audi_rs6_g2080.jpg',
 120000, 2020, 'very good car!', 5, 450, 5),
 (3,2,8,3,5,1,17,
-'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/audi-rs6-3.5-star-car.jpg?itok=RKnoV2Zw',
+'audi-rs6-3.5-star-car.jpg',
 100000, 2017, 'very power and fast car!', 5, 560, 8);
 select * from car
+delete from car;
 alter table car add 
 picture_link nvarchar(max) not null,
 price int not null,

@@ -7,5 +7,7 @@ const admin_router = Router();
 // });
 
 admin_router.get('/', admin_controller.getCars);
+admin_router.post('/add', admin_controller.addProduct);
+admin_router.post('/delete', admin_controller.deleteProduct);
 
 module.exports = admin_router;

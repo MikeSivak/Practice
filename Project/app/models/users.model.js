@@ -20,6 +20,11 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             field: 'user_password'
         },
+        user_phone: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            field: 'user_phone'
+        },
         id_role: {
             type: Sequelize.INTEGER,
             allowNull: false,

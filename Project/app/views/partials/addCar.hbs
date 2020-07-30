@@ -2,16 +2,16 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <br>
-      <select id="sBrand"class="form-control" title="Select Brand">
+      <select id="sBrand" name="sBrand" class="form-control" title="Select Brand">
         <option disabled selected>Brand</option>
         {{#each brands}}
-          <option>{{this.brand_name}}</option>
+        <option>{{this.brand_name}}</option>
         {{/each}}
       </select>
     </div>
     <br>
     <div class="form-group col-md-6">
-      <select id="sModel" class="form-control" title="Select Model">
+      <select id="sModel" name="sModel" class="form-control" title="Select Model">
         <option disabled selected>Model</option>
         {{#each models}}
         <option>{{this.model_name}}</option>
@@ -19,7 +19,7 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sBody" class="form-control" title="Select Body">
+      <select id="sBody" name="sBody" class="form-control" title="Select Body">
         <option disabled selected>Body</option>
         {{#each bodies}}
         <option>{{this.body_name}}</option>
@@ -27,7 +27,7 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sFuel" class="form-control" title="Select Fuel">
+      <select id="sFuel" name="sFuel" class="form-control" title="Select Fuel">
         <option disabled selected>Fuel</option>
         {{#each fuels}}
         <option>{{this.fuel_name}}</option>
@@ -35,7 +35,7 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sDrive" class="form-control" title="Select Drive">
+      <select id="sDrive" name="sDrive" class="form-control" title="Select Drive">
         <option disabled selected>Drive</option>
         {{#each drives}}
         <option>{{this.drive_name}}</option>
@@ -43,15 +43,15 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sCylinders" class="form-control" title="Select Cylinders">
-        <option disabled selected>Cylinders</option>
+      <select id="sCylindersMarkking" name="sCylindersMarkking" class="form-control col-md-6" title="Select Cylinders">
+        <option disabled selected>Cylinders Marking</option>
         {{#each cylinders}}
-        <option>{{this.cylinders_count}}</option>
+        <option>{{this.cylinders_marking}}</option>
         {{/each}}
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sEngineType" class="form-control" title="Select Engine Type">
+      <select id="sEngineType" name="sEngineType" class="form-control" title="Select Engine Type">
         <option disabled selected>Engine Type</option>
         {{#each engine_types}}
         <option>{{this.engine_type_name}}</option>
@@ -59,7 +59,7 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <select id="sEngineVolume" class="form-control" title="Select Engine Volume">
+      <select id="sEngineVolume" name="sEngineVolume" class="form-control" title="Select Engine Volume">
         <option disabled selected>Engine Volume</option>
         {{#each engine_volumes}}
         <option>{{this.volume}}</option>
@@ -70,21 +70,21 @@
       <div class="custom-file-input">
         <input id="attach" type="button" value="Upload picture">
         <input type="file">
-        <input id="txt" type="text">
+        <input id="txt" name="txt" type="text">
       </div>
     </div>
     <div class="form-group col-md-6">
-      <input id="ePrice" type="text" class="form-control" title="Enter Price" placeholder="Enter Price">
+      <input id="ePrice" name="ePrice" type="text" class="form-control" title="Enter Price" placeholder="Enter Price">
     </div>
     <div class="form-group col-md-6">
-      <input id="eYear" type="number" class="form-control" title="Enter Year" placeholder="Enter Year">
+      <input id="eYear" name="eYear" type="number" class="form-control" title="Enter Year" placeholder="Enter Year">
     </div>
     <div class="form-group col-md-6">
-      <textarea id="wDescription" class="form-control" title="Write a car description" style="resize: none; height:131px; margin-top:-48px"
-        placeholder="Write Description"></textarea>
+      <textarea id="wDescription" name="wDescription" class="form-control" title="Write a car description"
+        style="resize: none; height:131px; margin-top:-48px" placeholder="Write Description"></textarea>
     </div>
     <div class="form-group col-md-6">
-      <select id="sFuelIndex" class="form-control" title="Select Fuel Index">
+      <select id="sFuelIndex" name="sFuelIndex" class="form-control" title="Select Fuel Index">
         <option disabled selected>Fuel Index</option>
         {{#each fuel_indices}}
         <option>{{this.index_name}}</option>
@@ -92,12 +92,13 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <input id="eHp" type="text" class="form-control" title="Enter Hp" placeholder="Enter Hp">
+      <input id="eHp" name="eHp" type="text" class="form-control col-md-6" title="Enter Hp" placeholder="Enter Hp">
+      <input id="quantity" name="quantity" type="text" class="form-control col-md-6" title="Enter Quantity" placeholder="Enter Quantity">
     </div>
   </div>
 
   <div id="add_but">
-    <button id="add" type="submit" class="btn btn-info">Add a new car</button>
+    <button id="add" type="submit" class="btn btn-info" formaction="/admin/add">Add a new car</button>
   </div>
 
 </form>

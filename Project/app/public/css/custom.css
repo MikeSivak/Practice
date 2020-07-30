@@ -162,3 +162,25 @@ html{
 #add_but{
     text-align: center;
 }
+
+#eHp{
+    width: 60%;
+}
+
+#quantity{
+    width: 20%;
+    margin-left: 2px;
+}
+
+#del_but{
+    background-color: rgb(112, 10, 10);
+    background-image:none;
+    background-repeat:no-repeat;
+    border-color:rgb(112, 10, 10);
+    margin-left: 80%;
+    margin-top: -7%;
+    
+    position: relative;
+    width: 120px;
+    height: 35px; 
+}

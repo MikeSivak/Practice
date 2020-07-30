@@ -3,7 +3,6 @@
         <li class="active"><a data-toggle="tab" href="#home">Add car</a></li>
         <li><a data-toggle="tab" href="#menu1">Car list</a></li>
         <li><a data-toggle="tab" href="#menu2">Users list</a></li>
-        <li><a data-toggle="tab" href="#menu3">Create car</a></li>
     </ul>
 
     <div class="tab-content">
@@ -14,10 +13,7 @@
             {{>carList}}
         </div>
         <div id="menu2" class="tab-pane fade">
-            <h2>here will be user list ...</h2>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-            <h2>here will be form for creating a new car ...</h2>
+            {{>userList}}
         </div>
     </div>
 </div>

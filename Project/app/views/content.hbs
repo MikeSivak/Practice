@@ -2,13 +2,13 @@
     {{#each content}}
     <div class="product-item">
         <img class="mini-pic"
-            src="{{this.picture_link}}"
+            src="/img/auto/{{this.picture_link}}"
             alt="Card image cap">
         <a id="link-item" href="/content/{{this.id}}">
             <label class="brand_label">{{'car_model.car_brand.brand_name'}}</label>
             <label class="model_label"> {{'car_model.model_name'}}</label>
             <label class="cylinders_label">
-                {{'car_cylinder.cylinders_marking'}}{{'car_cylinder.cylinders_count'}}</label>
+                {{'car_cylinder.cylinders_marking'}}</label>
             <label class="volume_label"> - {{'engine_volume.volume'}}</label>
             <label class="body_label">({{'car_body.body_name'}},</label>
             <label class="fuel_label">{{'car_fuel.fuel_name'}},</label>
