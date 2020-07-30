@@ -32,7 +32,6 @@
                         <dt class="descript">Модель</dt>
                         <dd class="descript">{{'car_model.model_name'}}</dd>
                     </dl> <!-- item-property-hor .// -->
-                    <dl class="param param-feature">
                         <dt class="descript">Год выпуска</dt>
                         <dd class="descript">{{this.years}}</dd>
                     </dl> <!-- item-property-hor .// -->
@@ -40,7 +39,12 @@
                         <dt class="descript">Страна производитель</dt>
                         <dd class="descript">{{'car_model.car_brand.car_country.country_name'}}</dd>
                     </dl> <!-- item-property-hor .// -->
-                    <a href="#" class="btn btn-lg btn-primary text-uppercase"> Купить </a>
+
+                    <form method="POST" action="/content/buy">
+                                        <input id="hidden-field" name="id_car" type="hidden" value="{{this.id}}">
+                                        <button type="submit" class="btn btn-lg btn-primary text-uppercase" > Купить </button>
+                                    </form>
+
                 </article> <!-- card-body.// -->
             </aside> <!-- col.// -->
 

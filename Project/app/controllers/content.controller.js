@@ -152,7 +152,7 @@ exports.getProduct = async (req, res) => {
 exports.buyProduct = async (req, res) => {
 
     try {
-        
+        console.log('I am working')
     }
     catch (e) {
         res.status(500).json({
