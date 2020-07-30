@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const db = require('./models');
 db.sequelize.sync();
+const auth = require('./middleware/auth');
 
 const path = require('path');
 var exphbs = require('express-handlebars');
@@ -37,12 +38,30 @@ app.engine("hbs", exphbs(
 app.use(express.static('public'));
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
+app.use('/auth', require('./routes/auth.route'));
+
 app.get('/', (req,res)=>{
     res.render('home');
 });
 
+app.get('/login', (req,res)=>{
+    res.render('login');
+});
 
-app.use('/admin', admin_router);
+app.get('/register', (req,res)=>{
+    res.render('register');
+})
+
+
+app.use('/admin', auth, (req,res,next)=>{
+    if(req.user.id_role == 1){
+        next();
+    }
+    else{
+        res.render('home');
+    }
+}, admin_router);
+
 app.use('/content', content_router);
 
 app.listen(port);
