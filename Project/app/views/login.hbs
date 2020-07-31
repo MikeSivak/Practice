@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/login.css">
-
+<br><br>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -13,18 +13,31 @@
         <br><br>
       <img style="width:48px; height:48px; margin-bottom:20px" src="https://img.icons8.com/fluent/48/000000/car.png" id="icon" alt="User Icon" />
     </div>
-
     <!-- Login Form -->
     <form method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <br><br>
       <input type="submit" formaction="/auth/login" class="fadeIn fourth" value="Sign In">
     </form>
 
+    <style>
+        #reg{
+            color: #23527c;
+            border: none;
+            background: none;
+        }
+
+        #reg:hover{
+            text-decoration: underline;
+        }
+    </style>
+
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="http://localhost:5000/register">Sign Up</a>
+        <form method="GET">
+            <button id="reg" type="button" onclick="location.href='/register'">Sign Up</button>
+        </form>
     </div>
 
   </div>

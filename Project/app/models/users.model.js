@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
     const users = sequelize.define('users', {
         id: {
             type: Sequelize.INTEGER,
-            autoIncremment: true,
+            autoIncrement: true,
             primaryKey: true,
             allowNull: false,
             field: 'id'
@@ -32,6 +32,7 @@ module.exports = (sequelize, Sequelize) => {
             referencesKey: 'id',
             field: 'id_role'
         }
+        
     },{
         modelName: 'users',
         tableName: 'users',

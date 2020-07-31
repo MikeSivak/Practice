@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser')
 
 const content_router = require('./routes/content.route.js');
 const admin_router = require('./routes/admin.route.js');
+const register_router = require('./routes/register.route.js');
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -48,9 +49,7 @@ app.get('/login', (req,res)=>{
     res.render('login');
 });
 
-app.get('/register', (req,res)=>{
-    res.render('register');
-})
+app.use('/register', register_router);
 
 
 app.use('/admin', auth, (req,res,next)=>{

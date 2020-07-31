@@ -11,16 +11,20 @@
 
     <!-- Login Form -->
     <form method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="text" id="phone" class="fadeIn third" name="phone" placeholder="phone">
       <br><br>
-      <input type="submit" formaction="/auth/login" class="fadeIn fourth" value="Sign Up">
+      <input type="submit" formaction="/register/send" class="fadeIn fourth" value="Sign Up">
     </form>
-
+    <style>
+        #log{
+            color: #23527c;
+        }
+    </style>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="http://localhost:5000/login">Sign in</a>
+      <a id="log" class="underlineHover" href="http://localhost:5000/login">Sign in</a>
     </div>
 
   </div>

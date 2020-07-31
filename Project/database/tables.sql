@@ -266,7 +266,7 @@ values
 select * from car_brand
 join car_country
 on car_brand.id_country = car_country.id;
-
+select * from users;
 
 insert into car_model
 values
@@ -306,19 +306,24 @@ values
 create table users
 (
 	id int identity(1,1) primary key,
-	user_login nvarchar(50),
-	user_password nvarchar(50),
+	user_login nvarchar(50) not null,
+	user_password nvarchar(max),
 	user_phone nvarchar(50),
-	id_role int
+	id_role int references roles(id)
 );
 
+alter table users add user_password nvarchar(max);
+drop table users;
 insert into users
 values
-('mike', '1999', '+375297314004', 1),
-('tony', '2000', '+375295355464', 2);
+('noizemcnorm@gmail.com', '$2a$10$wsJlY8dq5UFEXLeF3mBxyu69jrykv1NQLlbdRWPLmpaAdCSY8AiqS', '+375297314004', 1);
 
+delete from users;
+
+use auto_shop;
+SET IDENTITY_INSERT users ON
 select * from users;
-
+drop table roles;
 alter table users add foreign key (id_role) references roles(id);
 
 -----------------------------------------

@@ -49,7 +49,8 @@ router.post(
         console.log(req.body.email);
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
-            return res.status(400).json({errors: errors.array()})
+            // return res.status(400).json({errors: errors.array()})
+            res.render('login');
         }
         console.log(req.body.email);
 
@@ -57,14 +58,14 @@ router.post(
 
         try {
             // find user
-            let user = await User.findOne({where:{email:email}, raw:true});
+            let user = await User.findOne({where:{user_login:email}, raw:true});
             if (!user) {
                 return res
                     .status(400)
                     .json({errors: [{msg: 'Invalid Credentials'}]})
             }
             // compare passwords
-            const isMatch = await bcrypt.compare(password, user.password)
+            const isMatch = await bcrypt.compare(password, user.user_password)
 
             // invalid credentials
             if (!isMatch) {
@@ -99,7 +100,7 @@ router.post(
                         res.redirect('/admin');
                     }
                     else{
-                        res.redirect('/');
+                        res.render('home');
                     }
                 }
             )

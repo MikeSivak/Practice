@@ -171,7 +171,7 @@ exports.getCars = async (req, res) => {
 }
 
 exports.addProduct = async (req, res) => {
-    let brand_name = req.bowdy.sBrand;
+    // let brand_name = req.bowdy.sBrand;
     let model_name = req.body.sModel;
     let body_name = req.body.sBody;
     let fuel_name = req.body.sFuel;
