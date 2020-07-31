@@ -338,8 +338,9 @@ create table current_orders
 	order_date date
 );
 
-alter table current_orders add foreign key (id_car) references car(id),
-foreign key (id_user) references users(id);
+alter table currenat_orders add foreign key (id_car) references car(id);
+use auto_shop;
+alter table current_orders add foreign key (id_user) references users(id);
 
 create table orders_history
 (
@@ -349,8 +350,8 @@ create table orders_history
 	order_date date
 );
 
-alter table orders_history add foreign key (id_car) references car(id),
-foreign key (id_user) references users(id);
+alter table orders_history add foreign key (id_car) references car(id);
+alter table orders_history add foreign key (id_user) references users(id);
 
 
 -----------------------------------------

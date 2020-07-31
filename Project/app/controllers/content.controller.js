@@ -10,6 +10,16 @@ const car_drive = db.car_drive;
 const engime_type = db.engine_type;
 const engine_volume = db.engine_volume;
 const fuel_index = db.fuel_index;
+const current_orders = db.current_orders;
+const users = db.users;
+
+users.hasMany(current_orders, {
+    foreignKey: 'id_user',
+    sourceKey: 'id'
+});
+current_orders.belongsTo(users, {
+    foreignKey: 'id_user'
+})
 
 car_cylinders.hasMany(car, {
     foreignKey: 'id_cylinders',
@@ -150,9 +160,20 @@ exports.getProduct = async (req, res) => {
 }
 
 exports.buyProduct = async (req, res) => {
+    const id_car = req.body.id_car;
+    const id_user = req.user.id;
+    const date = new Date();
 
     try {
-        console.log('I am working')
+        await current_orders
+            .create({
+                id_car: id_car,
+                id_user: id_user,
+                order_date: date
+            })
+            .then(
+                res.redirect('http://localhost:5000/content')
+            );
     }
     catch (e) {
         res.status(500).json({
