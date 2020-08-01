@@ -1,1 +1,0 @@
-<div style="text-align: center; font-size:40px; margin-top:1%">Guitar ordered successfully!</div>

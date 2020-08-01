@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser')
 const content_router = require('./routes/content.route.js');
 const admin_router = require('./routes/admin.route.js');
 const register_router = require('./routes/register.route.js');
+const order_router = require('./routes/order.route');
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,6 +52,14 @@ app.get('/login', (req,res)=>{
 
 app.use('/register', register_router);
 
+app.use('/order', auth, (req,res,next)=>{
+    if(req.user.id_role == 1){
+        next();
+    }
+    else{
+        res.render('home');
+    }
+}, order_router);
 
 app.use('/admin', auth, (req,res,next)=>{
     if(req.user.id_role == 1){

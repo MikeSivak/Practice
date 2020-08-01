@@ -19,7 +19,7 @@ users.hasMany(current_orders, {
 });
 current_orders.belongsTo(users, {
     foreignKey: 'id_user'
-})
+});
 
 car_cylinders.hasMany(car, {
     foreignKey: 'id_cylinders',

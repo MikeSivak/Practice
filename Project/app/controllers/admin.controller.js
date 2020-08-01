@@ -12,6 +12,23 @@ const engine_volume = db.engine_volume;
 const fuel_index = db.fuel_index;
 const users = db.users;
 const roles = db.roles;
+const current_orders = db.current_orders;
+
+users.hasMany(current_orders, {
+    foreignKey: 'id_user',
+    sourceKey: 'id'
+});
+current_orders.belongsTo(users, {
+    foreignKey: 'id_user'
+});
+
+car.hasMany(current_orders, {
+    foreignKey: 'id_car',
+    sourceKey: 'id'
+});
+current_orders.belongsTo(car, {
+    foreignKey: 'id_car'
+});
 
 roles.hasMany(users, {
     foreignKey: 'id_role',
@@ -130,6 +147,18 @@ exports.getCars = async (req, res) => {
             raw: true
         });
 
+        const order_list = await current_orders
+        .findAll({
+            include: [
+                {model: users},
+                {model: car, include: [{model: car_model, include: car_brand}]}
+            ],
+            raw:true
+        });
+
+        console.log('========================================================');
+        console.log(order_list);
+        console.log('========================================================');
 
     try {
         await car
@@ -159,7 +188,8 @@ exports.getCars = async (req, res) => {
                     engine_types: engine_types,
                     engine_volumes: engine_volumes,
                     fuel_indices: fuel_indices,
-                    users_list: users_list
+                    users_list: users_list,
+                    order_list: order_list
                 });
                 console.log(cars);
             })

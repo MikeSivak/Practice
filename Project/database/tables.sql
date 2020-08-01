@@ -350,7 +350,9 @@ create table orders_history
 	order_date date
 );
 
+select * from current_orders;
 alter table orders_history add foreign key (id_car) references car(id);
+use auto_shop;
 alter table orders_history add foreign key (id_user) references users(id);
 
 
